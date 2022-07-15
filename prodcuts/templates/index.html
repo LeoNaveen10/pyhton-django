@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block content %}
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">fruits Shopping App</a>
+  </div>
+</nav>
+<h1 style="text-align: center">Products</h1>
+<div class="row">
+  {% for item in products %}
+  <div class="col">
+    <div class="card" style="width: 18rem">
+      <img src="{{ item.imageUrl}}" class="card-img-top" alt="{{item.name}}" />
+      <div class="card-body">
+        <h5 class="card-title">{{ item.name }}</h5>
+        <p class="card-text">${{ item.price}}</p>
+        <a href="#" class="btn btn-primary">add to cart</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
